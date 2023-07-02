@@ -23,3 +23,32 @@ class Car:
         deducts 5 from the car's speed
     
     '''
+
+    def __init__(self, year_model:int, maker:str, speed:int=0) -> None:
+
+        '''
+        Parameters
+        ----------
+
+        year_model : int
+            the year the car was made
+        maker : str
+            the car's manufacturer
+        speed : int, optional
+            the car's speed (default is 0)
+
+        '''
+
+        # Validate input first
+        if ( not( type(year_model) == int or type(speed) == int ) ):
+            raise TypeError("Invalid arguments type")
+        
+        # Coerce maker to be a string
+        try:
+            maker = str(maker)
+        except ValueError:
+            raise TypeError("Maker input must be a string")
+
+        self.__year_model = year_model
+        self.__maker = maker
+        self.__speed = speed
