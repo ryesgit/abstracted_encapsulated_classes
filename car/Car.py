@@ -67,3 +67,10 @@ class Car:
         '''
 
         self.__speed += self.__DELTA
+
+    def brake(self) -> None:
+        '''
+        reduces car speed by delta
+        '''
+
+        self.__speed -= self.__DELTA
