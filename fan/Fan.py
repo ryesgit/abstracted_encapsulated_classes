@@ -40,7 +40,19 @@ class Fan:
     __MEDIUM = 2
     __FAST = 3
 
-    def __init__(self, power: bool, speed: int, radius: float, color: str) -> None:
+    def __init__(self, power: bool=False, speed: int=__SLOW, radius: float=5.0, color: str='blue') -> None:
+        '''
+        Parameters
+        ----------
+        power : bool, optional
+            specifies whether fan is on or off (default is False)
+        speed : int, optional
+            the electric fan's speed (default is __SLOW = 1)
+        radius : float, optional
+            the electric fan's radius (default is 5.0)
+        color : str, optional
+            the electric fan's color (default is blue)
+         '''
         self.__power = power
         self.__speed = speed
         self.__radius = radius

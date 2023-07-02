@@ -30,3 +30,10 @@ def test_radius_throws_error():
 def test_can_set_color():
     first_fan.set_color('Green')
     assert first_fan.get_color() == 'Green'
+
+def test_create_fan_default():
+    default_fan = Fan()
+    assert default_fan.get_color() == 'blue'
+    assert default_fan.get_power() == False
+    assert default_fan.get_radius() == 5.0
+    assert default_fan.get_speed() == 1
