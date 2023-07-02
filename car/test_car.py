@@ -8,3 +8,9 @@ def test_can_instantiate_car():
 
 def test_can_get_speed():
     assert car_one.get_speed() == 0
+
+def test_can_accelerate():
+    DELTA = 5
+    init_speed = car_one.get_speed()
+    car_one.accelerate()
+    assert car_one.get_speed() == init_speed + DELTA

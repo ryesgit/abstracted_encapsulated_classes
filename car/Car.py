@@ -60,3 +60,10 @@ class Car:
         returns the car speed
         '''
         return self.__speed
+
+    def accelerate(self) -> None:
+        '''
+        adds delta to car speed
+        '''
+
+        self.__speed += self.__DELTA
