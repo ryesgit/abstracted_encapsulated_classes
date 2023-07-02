@@ -24,6 +24,8 @@ class Car:
     
     '''
 
+    __DELTA = 5
+
     def __init__(self, year_model:int, maker:str, speed:int=0) -> None:
 
         '''
