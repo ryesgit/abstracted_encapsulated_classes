@@ -26,3 +26,7 @@ def test_can_set_radius():
 def test_radius_throws_error():
     with pytest.raises(TypeError):
         first_fan.set_radius('Cthulu')
+
+def test_can_set_color():
+    first_fan.set_color('Green')
+    assert first_fan.get_color() == 'Green'

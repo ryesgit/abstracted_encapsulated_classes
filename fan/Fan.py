@@ -106,3 +106,24 @@ class Fan:
             raise TypeError("Radius input must be a floating point number")
         
         self.__radius = radius
+
+    def get_color(self) -> str:
+        '''
+        Gets the fan's color
+        '''
+
+        return self.__color
+    
+    def set_color(self, color:str) -> None:
+        '''
+        Sets the fan's color
+        '''
+
+        # Try to convert input to string
+        try:
+            color = str(color)
+
+        except ValueError:
+            raise TypeError("Color input must be a string")
+        
+        self.__color = color
