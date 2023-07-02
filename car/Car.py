@@ -52,3 +52,9 @@ class Car:
         self.__year_model = year_model
         self.__maker = maker
         self.__speed = speed
+
+    def get_speed(self) -> int:
+        '''
+        returns the car speed
+        '''
+        return self.__speed
