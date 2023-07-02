@@ -63,3 +63,25 @@ class Fan:
             raise TypeError("Power input should be a boolean (True/False)")
         
         self.__power = power
+
+    def get_speed(self) -> int:
+        '''
+        Gets the electric fan's speed
+        '''
+
+        return self.__speed
+    
+    def set_speed(self, speed:int) -> None:
+        '''
+        Sets the electric fan's power state
+        '''
+
+        # Check if speed is an integer. If not, change nothing.
+        if(not(type(speed) == int)):
+            raise TypeError("Speed input should be an integer")
+        
+        # Restrict speed integer input (1 - 3 only)
+        if(not( 1 <= speed <= 3 )):
+            raise ValueError("Speed input must be only from 1 to 3")
+        
+        self.__speed = speed
