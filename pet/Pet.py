@@ -44,3 +44,18 @@ class Pet:
         self.__name = name
         self.__animal_type = animal_type
         self.__age = age
+
+    def get_name(self):
+        '''
+        returns the pet's name
+        '''
+
+        return self.__name
+    
+    def set_name(self, name):
+        try:
+            name = str(name)
+        except ValueError:
+            raise TypeError("Name input must be a string")
+        
+        self.__name = name
