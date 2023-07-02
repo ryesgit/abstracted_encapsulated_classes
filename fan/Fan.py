@@ -45,3 +45,21 @@ class Fan:
         self.__speed = speed
         self.__radius = radius
         self.__color = color
+
+    def get_power(self) -> bool:
+        '''
+        Gets the electric fan's power state
+        '''
+        return self.__power
+    
+    def set_power(self, power: bool) -> None:
+
+        '''
+        Sets the electric fan's power state
+        '''
+
+        # Check if power is boolean. If not, change nothing.
+        if (not(type(power) == bool)):
+            raise TypeError("Power input should be a boolean (True/False)")
+        
+        self.__power = power
