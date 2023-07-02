@@ -74,3 +74,17 @@ class Pet:
             raise TypeError("Animal type input must be a string")
         
         self.__animal_type = animal_type
+
+    def get_age(self) -> int:
+        '''
+        returns the pet's age
+        '''
+        return self.__age
+    
+    def set_age(self, age: int) -> None:
+
+        # Check if age is int. If not, throw error
+        if ( not( type(age) == int ) ):
+            raise TypeError("Age must be an integer")
+        
+        self.__age = age
