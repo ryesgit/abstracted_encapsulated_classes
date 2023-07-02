@@ -59,3 +59,18 @@ class Pet:
             raise TypeError("Name input must be a string")
         
         self.__name = name
+
+    def get_animal_type(self):
+        '''
+        returns the pet's animal type
+        '''
+
+        return self.__animal_type
+    
+    def set_animal_type(self, animal_type:str):
+        try:
+            animal_type = str(animal_type)
+        except ValueError:
+            raise TypeError("Animal type input must be a string")
+        
+        self.__animal_type = animal_type
