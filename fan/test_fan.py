@@ -18,3 +18,11 @@ def test_speed_throws_type_error():
 def test_can_set_speed():
     first_fan.set_speed(3)
     assert first_fan.get_speed() == 3
+
+def test_can_set_radius():
+    first_fan.set_radius(50)
+    assert first_fan.get_radius() == 50
+
+def test_radius_throws_error():
+    with pytest.raises(TypeError):
+        first_fan.set_radius('Cthulu')

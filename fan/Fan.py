@@ -85,3 +85,24 @@ class Fan:
             raise ValueError("Speed input must be only from 1 to 3")
         
         self.__speed = speed
+
+    def get_radius(self) -> float:
+        '''
+        Gets the fan's radius
+        '''
+
+        return self.__radius
+    
+    def set_radius(self, radius:float) -> None:
+        '''
+        Sets the fan's radius
+        '''
+
+        # Try to convert input to float
+        try:
+            radius = float(radius)
+
+        except ValueError:
+            raise TypeError("Radius input must be a floating point number")
+        
+        self.__radius = radius
