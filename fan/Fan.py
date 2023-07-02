@@ -40,5 +40,8 @@ class Fan:
     __MEDIUM = 2
     __FAST = 3
 
-    def __init__(self) -> None:
-        pass
+    def __init__(self, power: bool, speed: int, radius: float, color: str) -> None:
+        self.__power = power
+        self.__speed = speed
+        self.__radius = radius
+        self.__color = color
