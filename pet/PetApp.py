@@ -25,6 +25,16 @@ class PetApp:
     '''
 
     def __init__(self, master: tk.Tk, pet: Pet, image_path: str) -> None:
+        '''
+        Parameters
+        ----------
+        master : tk.Tk
+            widget instance from tkinter
+        pet : Pet
+            the pet instance
+        image_path : str
+            the path for the pet's image
+        '''
         self.__master = master
         self.__pet = pet
         image = Image.open(image_path)
@@ -36,10 +46,16 @@ class PetApp:
 
 
     def draw_pet(self) -> None:
+        '''
+        draws the pet onto the canvas
+        '''
         self.__tkimage = ImageTk.PhotoImage(self.__image)
         self.__canvas_image = self.__canvas.create_image(self.__canvas.winfo_width() / 2, self.__canvas.winfo_height() / 2, image=self.__tkimage)
 
     def display_dialogue(self):
+        '''
+        pops up a dialogue of pet's info
+        '''
         pet = self.__pet
         dialogue = f"Hello! My name is {pet.get_name()}, I am a {pet.get_animal_type()}, and I am {pet.get_age()} years old!"
         messagebox.showinfo("Pet Info!", dialogue)
