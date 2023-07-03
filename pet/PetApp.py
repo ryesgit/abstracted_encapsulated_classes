@@ -8,12 +8,12 @@ class PetApp:
 
     Attributes
     ----------
+    master : tk.Tk
+        the widget instance from Tkinter
     pet : Pet
         the pet instance
     image_path : str
         the image path for the pet's image
-    master : tk.Tk
-        the widget instance from Tkinter
 
     Methods
     -------
@@ -23,3 +23,9 @@ class PetApp:
         display's the pet's speech
 
     '''
+
+    def __init__(self, master: tk.Tk, pet: Pet) -> None:
+        self.__pet = pet
+        self.__master = master
+        self.__canvas = tk.Canvas(master, width=500, height=500)
+        self.__canvas.pack()
