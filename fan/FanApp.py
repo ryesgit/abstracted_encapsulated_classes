@@ -35,7 +35,7 @@ class FanApp:
         image = Image.open(image_path)
         self.__image = image
         self.__rotation = 0
-        self.__canvas = tk.Canvas(self.__master, width=self.__image.size[0] + 20, height=self.__image.size[1] + 20)
+        self.__canvas = tk.Canvas(self.__master, width=self.__image.size[0] + 20, height=self.__image.size[1] + 20, bg=self.__fan.get_color())
         self.__canvas.pack()
         self.__master.after(100, self.draw_image)
 
