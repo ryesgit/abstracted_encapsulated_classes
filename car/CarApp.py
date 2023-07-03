@@ -1,6 +1,7 @@
 from PIL import Image, ImageTk
 import tkinter as tk
 from Car import Car
+from utils.CarHelpers import accelerate_many, decelerate_many
 
 class CarApp:
     '''
@@ -61,6 +62,7 @@ class CarApp:
         '''
         moves the car along the plane in the canvas
         '''
+        print(self.__car.get_speed())
         self.__delta = self.__car.get_speed() * 0.05
         self.__canvas.delete(self.__canvas_image)
         self.draw_car()

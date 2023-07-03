@@ -1,8 +1,8 @@
 from CarApp import CarApp
 from Car import Car
 import tkinter as tk
-
-car = Car(2003, 'Honda', 10)
+from utils.CarHelpers import accelerate_many, decelerate_many
+car = Car(2003, 'Honda')
 root = tk.Tk()
 
 
@@ -10,5 +10,8 @@ root = tk.Tk()
 # https://www.flaticon.com/authors/vector-stall
 
 car_app = CarApp(car, root, './car/assets/race-car.png')
+
+for time in range(5):
+    car.accelerate()
 
 root.mainloop()
