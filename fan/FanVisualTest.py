@@ -5,5 +5,6 @@ import tkinter
 root = tkinter.Tk()
 
 fan = Fan(True)
-fan_app = FanApp(fan, root)
+fan_app = FanApp(fan, root, image_path='./fan/assets/fan.png')
+fan_app.draw_image()
 root.mainloop()
