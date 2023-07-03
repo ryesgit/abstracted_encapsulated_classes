@@ -44,7 +44,7 @@ class CarApp:
         self.__delta = 0
         self.__car_x = self.__image.size[0] / 2
         self.__car_y = self.__image.size[1] / 2
-        self.__canvas = tk.Canvas(master, width=(self.__image.size[0] * 5), height=(self.__image.size[1] + 20))
+        self.__canvas = tk.Canvas(master, width=(self.__image.size[0] * 10), height=(self.__image.size[1] + 20))
         self.__canvas.pack()
         self.__master.after(100, self.draw_car)
         self.__master.after(1000, self.accelerate_five)
@@ -65,7 +65,7 @@ class CarApp:
         '''
         moves the car along the plane in the canvas
         '''
-        self.__delta = self.__car.get_speed() * 0.1
+        self.__delta = self.__car.get_speed() * 0.2
         self.__canvas.delete(self.__canvas_image)
         self.draw_car()
 
