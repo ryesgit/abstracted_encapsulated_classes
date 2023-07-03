@@ -31,3 +31,8 @@ class PetApp:
         self.__image = image
         self.__canvas = tk.Canvas(master, width=image.size[0] + 100, height=image.size[1] + 100 )
         self.__canvas.pack()
+        self.__master.after(100, self.draw_pet)
+
+    def draw_pet(self) -> None:
+        self.__tkimage = ImageTk.PhotoImage(self.__image)
+        self.__canvas_image = self.__canvas.create_image(self.__canvas.winfo_width() / 2, self.__canvas.winfo_height() / 2, image=self.__tkimage)
