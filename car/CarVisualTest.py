@@ -2,7 +2,7 @@ from CarApp import CarApp
 from Car import Car
 import tkinter as tk
 
-car = Car(2003, 'Honda', 20)
+car = Car(2003, 'Honda', 10)
 root = tk.Tk()
 
 
