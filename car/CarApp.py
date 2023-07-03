@@ -36,6 +36,17 @@ class CarApp:
         self.__car = car
         self.__master = master
         image = Image.open(image_path)
-        self.__image = image
+        flip_img = image.transpose(Image.FLIP_LEFT_RIGHT)
+
+        self.__image = flip_img
         self.__canvas = tk.Canvas(master, width=(self.__image.size[0] * 5), height=(self.__image.size[1] + 20))
         self.__canvas.pack()
+        self.__master.after(100, self.draw_car)
+
+    def draw_car(self):
+        '''
+        Draws car image onto canvas
+        '''
+        self.__tkimage = ImageTk.PhotoImage(self.__image)
+        self.__canvas_image = self.__canvas.create_image(self.__image.size[0] / 2, self.__image.size[1] / 2,  image=self.__tkimage)
+        
