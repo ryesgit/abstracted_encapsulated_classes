@@ -7,6 +7,10 @@ from FanTest import first_fan, second_fan
 root = tkinter.Toplevel()
 root2 = tkinter.Toplevel()
 
+
+# Credits to Vector Stall for the fan icon!
+# https://www.flaticon.com/authors/vector-stall
+
 first_fan_app = FanApp(first_fan, root, image_path='./fan/assets/fan.png')
 second_fan_app = FanApp(second_fan, root2, image_path='./fan/assets/fan.png')
 
