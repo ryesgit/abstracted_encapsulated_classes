@@ -58,6 +58,6 @@ class FanApp:
             return
 
         self.__canvas.delete(self.__canvas_image)
-        self.__rotation += 10
+        self.__rotation += (10 * self.__fan.get_speed())
         self.__rotation %= 360
         self.draw_image()
