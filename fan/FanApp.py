@@ -20,3 +20,16 @@ class FanApp:
     rotate_image
         rotate image inside canvas
     '''
+    def __init__(self, fan:Fan, master: tk.Tk) -> None:
+        '''
+        Parameters
+        ----------
+        fan: Fan
+            A fan instance
+        master: tk.Tk
+            an instance of Tkinter widget
+        '''
+
+        self.__fan = fan
+        self.__master = master
+        self.__canvas = tk.Canvas(master, width=500, height=500)
