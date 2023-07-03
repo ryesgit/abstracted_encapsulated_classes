@@ -34,10 +34,30 @@ class FanApp:
         self.__master = master
         image = Image.open(image_path)
         self.__image = image
+        self.__rotation = 0
         self.__canvas = tk.Canvas(self.__master, width=self.__image.size[0] + 20, height=self.__image.size[1] + 20)
         self.__canvas.pack()
+        self.__master.after(100, self.draw_image)
 
     def draw_image(self):
-        self.__tkimage = ImageTk.PhotoImage(self.__image)
+        '''
+        draws the image onto the canvas
+        '''
+        self.__tkimage = ImageTk.PhotoImage(self.__image.rotate(self.__rotation))
         canvas_image = self.__canvas.create_image(250, 250, image=self.__tkimage)
         self.__canvas_image = canvas_image
+        self.__master.after_idle(self.rotate_image)
+
+    def rotate_image(self):
+        '''
+        rotates image to "turn on" the fan
+        '''
+        # Do not rotate image if fan is off
+        if not self.__fan.get_power():
+            print("Fan is in off state")
+            return
+
+        self.__canvas.delete(self.__canvas_image)
+        self.__rotation += 10
+        self.__rotation %= 360
+        self.draw_image()
