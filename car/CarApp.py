@@ -2,6 +2,7 @@ from PIL import Image, ImageTk
 import tkinter as tk
 from Car import Car
 from utils.CarHelpers import accelerate_many, decelerate_many
+from threading import Thread
 
 class CarApp:
     '''
@@ -46,6 +47,8 @@ class CarApp:
         self.__canvas = tk.Canvas(master, width=(self.__image.size[0] * 5), height=(self.__image.size[1] + 20))
         self.__canvas.pack()
         self.__master.after(100, self.draw_car)
+        self.__master.after(1000, self.accelerate_five)
+        self.__master.after(6000, self.decelerate_five)
 
     def draw_car(self):
         '''
@@ -62,7 +65,22 @@ class CarApp:
         '''
         moves the car along the plane in the canvas
         '''
-        print(self.__car.get_speed())
-        self.__delta = self.__car.get_speed() * 0.05
+        self.__delta = self.__car.get_speed() * 0.1
         self.__canvas.delete(self.__canvas_image)
         self.draw_car()
+
+    def accelerate_five(self):
+        '''
+        accelerates car five times
+        '''
+
+        accelerate_thread = Thread(target=accelerate_many, args=(self.__car, 5))
+        accelerate_thread.start()
+
+    def decelerate_five(self):
+        '''
+        decelerates car five times
+        '''
+
+        decelerate_thread = Thread(target=decelerate_many, args=(self.__car, 5))
+        decelerate_thread.start()

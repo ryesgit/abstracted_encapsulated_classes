@@ -11,7 +11,4 @@ root = tk.Tk()
 
 car_app = CarApp(car, root, './car/assets/race-car.png')
 
-for time in range(5):
-    car.accelerate()
-
 root.mainloop()
